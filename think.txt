@@ -1,8 +1,0 @@
-https://alt-f4.blog/ / https://factorio.com/
-
-favicon
-
-python3 -m http.server
-
-hosting: 
-    Github pages, namecheap for domain name or use peyrondet.com with subdomain ? eg louis.peyrondet.com
