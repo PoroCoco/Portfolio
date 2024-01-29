@@ -1,0 +1,26 @@
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 10px;
+    color: #d4d4d4;
+    background : none;
+    border:none;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1; /* Ensure the button is above the image */
+    transition: color 0.2s linear;
+}
+.carousel-button:hover {
+    color: #ffffff;
+    font-size: 32px;
+}
+
+.carousel-button.prev{
+    left:3%;
+}
+
+.carousel-button.next{
+    right:-10px;
+}

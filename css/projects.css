@@ -1,0 +1,113 @@
+.projects-item {
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    background-color: none; /* White background */
+    width: 55%; 
+    min-width: 1000px;
+    padding-bottom: 5vh;
+    grid-template-columns: 1fr 1fr; /* Create two equal columns */
+    grid-template-rows: max-content max-content max-content;
+    transition: box-shadow 0.3s ease;
+}
+
+.project-title {
+    color:aliceblue;
+    background-color: none; 
+    box-sizing: border-box;
+    width:100%;
+    font-weight: bold;
+    font-size: x-large;
+    padding: 5px;
+    margin-left: 10%;
+}
+
+.project-date {
+    margin-left: auto;
+    text-align: right;
+    background-color: none; 
+    box-sizing: border-box;
+    font-size: larger;
+    width:100%;
+    font-style: italic;
+    padding: 5px;
+    padding-left: 0px;
+}
+
+.project-tag {
+    padding: 10px;
+    grid-column: span 2;
+    box-sizing: border-box;
+    width:100%;
+}
+
+.single-tag {
+    color:#010101;
+    background-color: #caab78; /* Orange */
+    border-radius: 25px;
+    padding: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: medium;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.project-media {
+    position: relative;
+    background-color: #f2f2f2; /* Light gray background */
+    box-sizing: border-box;
+    width:100%;
+    overflow: hidden;
+    min-height: 300px;
+    max-height: 33vh;
+    border-radius: 25px;
+    transition: box-shadow 0.3s ease;
+}
+
+.images {
+    position: relative;
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: 33vh;
+    min-height: 100%;
+}
+
+.project-media:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.images img {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+.project-description {
+    margin-top: auto;
+    margin-bottom: auto;
+    max-height: 25vh;
+    min-height: 300px;
+    background-color: #3C3836;; /* Light gray background */
+    box-sizing: border-box;
+    border-radius: 25px;
+    padding: 30px;
+    width: 100%;
+    font-size: larger;
+    overflow: auto;
+    transition: box-shadow 0.3s ease;
+}
+
+.project-description:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 1050px) {
+    .projects-item {
+        width: 95%; 
+        min-width: 0;
+    }
+}
