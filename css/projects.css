@@ -12,6 +12,7 @@
 }
 
 .project-title {
+    text-align: center;
     color:aliceblue;
     background-color: none; 
     box-sizing: border-box;
@@ -19,7 +20,6 @@
     font-weight: bold;
     font-size: x-large;
     padding: 5px;
-    margin-left: 10%;
 }
 
 .project-date {
@@ -65,6 +65,12 @@
     transition: box-shadow 0.3s ease;
 }
 
+.media-video {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
 .images {
     position: relative;
     display: flex;
@@ -89,8 +95,9 @@
 .project-description {
     margin-top: auto;
     margin-bottom: auto;
-    max-height: 25vh;
-    min-height: 300px;
+    max-height: 30vh;
+    height: fit-content;
+    min-height: 10vh;
     background-color: #3C3836;; /* Light gray background */
     box-sizing: border-box;
     border-radius: 25px;

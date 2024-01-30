@@ -29,7 +29,18 @@ function createProjects(jsonData){
             mediaCount++;
         }
         for(const media of projectJSON["media"]){
-            projectMedias += `<img src="ressources/${media["path"]}" alt="${media["alt-text"]}">\n`;
+            let mediaType = media["path"].split("/")[1];
+            if (mediaType == "images" || mediaType == "gif"){
+                projectMedias += `<img src="ressources/${media["path"]}" alt="${media["alt-text"]}">\n`;
+            }else if (mediaType == "videos"){
+                let videoExtension = media["path"].split(".")[1];
+                projectMedias += `  <video class="media-video" muted="true" loop="true" autoplay="true">
+                                        <source src="ressources/${media["path"]}" type="video/${videoExtension}"/>
+                                    </video>`
+            }else{
+                console.error("Invalid media type for project generation of \"", projectJSON["title"], "\", media type was : ", mediaType);
+                continue;
+            }
             mediaCount++;
         }
         portfolioItem.className = "projects-item";
