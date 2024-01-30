@@ -15,7 +15,7 @@ function readJSON(path, callback) {
 
 function createProjects(jsonData){
     const portfolioContent = document.getElementById("projects-content");
-    let i = 0;
+    let currentProjectIndex = 0;
     function projectGeneration(projectJSON){
         const portfolioItem = document.createElement("div");
         let projectTags = "";
@@ -59,7 +59,7 @@ function createProjects(jsonData){
         mediaDiv += `</div>`;
         let descriptionDiv = `<div class="project-description">${projectJSON["description"]}</div>`;
         portfolioItem.innerHTML = titleDiv + dateDiv + tagsDiv;
-        if (i%2 == 0){
+        if (currentProjectIndex%2 == 0){
             portfolioItem.innerHTML += mediaDiv + descriptionDiv;
         }else{
             portfolioItem.innerHTML += descriptionDiv + mediaDiv;
@@ -70,7 +70,7 @@ function createProjects(jsonData){
     // Loop through the projects to generate them
     for (const project of jsonData) {
         projectGeneration(project)
-        i++;
+        currentProjectIndex++;
     }
 }
 

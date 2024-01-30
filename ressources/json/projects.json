@@ -3,12 +3,13 @@
         "title" : "Vulkan Engine",
         "date" : "2024",
         "type" : "Personal Project",
-        "description" : "A simple vulkan based renderer. It can load models and have a camera module to navigate in the scene.",
+        "description" : "A simple vulkan based renderer. It can load models and have a camera module to navigate in the scene. It's a work in progress project.",
         "tags" : ["C++", "Vulkan", "Graphics", "GPU"],
         "repo" : "",
         "media" :
         [
-            {"alt-text" : "Vulkan Renderer model examination",  "path" : "/images/vulkan_model.png"}
+            {"alt-text" : "Vulkan wireframe truck model spinning",  "path" : "/videos/vulkan_wireframe_truck.mp4"},
+            {"alt-text" : "Vulkan Vokselia Spawn basic render",  "path" : "/images/vulkan_vokselia_spawn.png"}
         ]
     },
     {
@@ -20,20 +21,46 @@
         "repo" : "https://github.com/PoroCoco/Physics-Engine-Verlet",
         "media" :
         [
-            {"alt-text" : "simulation interaction gif",  "path" : "/gif/physics_demo.gif"},
-            {"alt-text" : "simulated bouncy web",  "path" : "/gif/physics_web.gif"}
+            {"alt-text" : "simulation interaction gif",  "path" : "/videos/physics_rope.webm"},
+            {"alt-text" : "simulated web",  "path" : "/videos/physics_web.webm"}
         ]
     },
     {
         "title" : "Game of the Amazons",
         "date" : "2023",
         "type" : "School Project",
-        "description" : "Implementation of the <a href=\"https://en.wikipedia.org/wiki/Game_of_the_Amazons\" target=\"_blank\">Game of the Amazons</a>, a two player board game, with an AI opponent. This project was developed in team of 4 students. I led my team's software architecture and optimisations which, in addition to our advanced heuristics, made us win the competition against 28 other teams' AIs. KCacheGrind and Gprof were used for the needed optimisations as winning an Amazons game is a PSPACE-complete problem. The board is represented as a sparse matrix using GSL. Full report avaible: <a href=\"/ressources/pdf/report_amazons_fr.pdf\" target=\"_blank\">French</a>.<br>I made my own web port using WebAssembly.",
+        "description" : "Generic implementation of the <a href=\"https://en.wikipedia.org/wiki/Game_of_the_Amazons\" target=\"_blank\">Game of the Amazons</a>, a two player board game, with an AI opponent. This project was developed in team of 4 students. I led my team's software architecture and optimisations which, in addition to our advanced heuristics, made us win the competition against 28 other teams' AIs. KCacheGrind and Gprof were used for the needed optimisations as winning an Amazons game is a PSPACE-complete problem. The board is represented as a sparse matrix using GSL. Full report avaible: <a href=\"/ressources/pdf/report_amazons_fr.pdf\" target=\"_blank\">French</a>.<br>I made my own web port using WebAssembly.",
         "tags" : ["C", "<abbr title=\"GNU Scientific Library\">GSL</abbr>", "WebAssembly", "AI"],
         "repo" : "https://github.com/PoroCoco/Amazons-Game",
         "media" :
         [
 
         ]
+    },
+    {
+        "title" : "MyAeNetwork",
+        "date" : "2021",
+        "type" : "Personnal Project",
+        "description" : "MyAeNetwork is a program that allow modded Minecraft users to access and control their Applied Energistics storage from the web. It consists of a OpenComputer LUA program that act as a client that sends the storage information through a TCP socket with a custom protocol to a TCP server that handles every clients. A web interface with user logging is build on top and let players connect to their private storage to view its state and send crafting requests.",
+        "tags" : ["Lua", "TCP Socket", "Python", "Flask", "SQL"],
+        "repo" : "https://github.com/PoroCoco/myaenetwork",
+        "media" :
+        [
+            {"alt-text" : "Demo of the program",  "path" : "/videos/myaenetwork.webm"}
+        ]
+    },
+    {
+        "title" : "Distributed I/O Scheduler for Parallel File Systems in Supercomputers",
+        "date" : "2023",
+        "type" : "Professional Project",
+        "description" : "",
+        "tags" : ["C", "I/O", "MPI", "Data Visualization", "HPC"],
+        "repo" : "https://gitlab.inria.fr/lpeyrond/io-sets-distributed",
+        "media" :
+        [
+            {"alt-text" : "Diagram of the program",  "path" : "/images/io-sets_diagram.png"},
+            {"alt-text" : "Graph showing the Round Trip Time of I/O requests on 3 sets",  "path" : "/images/io-sets_exclusive.png"}
+        ]
     }
+
 ]
