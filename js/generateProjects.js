@@ -8,7 +8,7 @@ function readJSON(path, callback) {
     .then((data) => {
         callback(data);
         startAmazonDemo().then(
-            () => {window.onresize = updateCanvasDimensions;} // Updating the dimension means drawing, which means that the game must be started
+            () => {window.addEventListener("resize", updateCanvasDimensions);} // Updating the dimension means drawing, which means that the game must be started
         ); 
     });
 }

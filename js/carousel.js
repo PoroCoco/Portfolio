@@ -25,11 +25,12 @@ function updateSlide(event, increment){
 }
 
 
+// Just reset the slide to the first image for now
 function resizeSlides(){
-    // let slides = document.querySelectorAll(".images");
-    // for (slide in slides){
-    //     console.log(slide.clientWidth);
-    // }
+    let slides = document.querySelectorAll(".images");
+    for (const slide of slides){
+        slide.style.transform = "translateX(" + 0 + "px)";
+    }
 }
 
-window.onresize = resizeSlides;
+window.addEventListener("resize", resizeSlides);
