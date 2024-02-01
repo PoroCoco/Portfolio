@@ -70,7 +70,7 @@
         "date" : "2021",
         "type" : "Personnal Project",
         "description" : "MyAeNetwork is a program that allow modded Minecraft users to access and control their Applied Energistics storage from the web. It consists of a OpenComputer LUA program that act as a client that sends the storage information through a TCP socket with a custom protocol to a TCP server that handles every clients. A web interface with user logging is build on top and let players connect to their private storage to view its state and send crafting requests.",
-        "tags" : ["Lua", "TCP Socket", "Python", "Flask", "SQL"],
+        "tags" : ["Lua", "TCP Socket", "Networking", "Python", "Flask", "SQL"],
         "icons" : 
         [
             {"alt" : "Github Repo", "link" : "https://github.com/PoroCoco/myaenetwork", "path" : "/images/icon_github.png"}
