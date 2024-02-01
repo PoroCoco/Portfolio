@@ -2,6 +2,8 @@ let game; // The global var that hold the current game state
 let selectedPiece = 0; // Variable to store the selected piece index
 let destinationPiece = 0; // Variable to store the selected piece destination index
 let clickCount = 0; // Variable to track the click count
+let demoInteracted = 0; // 0 display interaction text, 1 display the rules, >1, nothing
+let canPlay = true;
 const playedMoves = [];
 
 const queen_white = new Image()
@@ -38,6 +40,17 @@ const playMove = (board, move) => {
 const undoMove = (canvas, ctx, board, move) => {
     
 };
+
+function displayText(canvas, ctx, text) {
+    ctx.fillStyle = "rgba(128, 128, 128, 0.3)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "rgb(0, 0, 0)";
+    let fontSize = Math.min(Math.round(canvas.height/9), Math.round(canvas.width/9));
+    ctx.font = fontSize + "px serif";
+    let textSize = ctx.measureText(text);
+    ctx.fillText(text, Math.max(canvas.width/2 - textSize.width/2, 0), canvas.height/2 + (textSize.actualBoundingBoxDescent)/2, canvas.width);
+}
 
 function highlight_cells_arrow_moves(canvas, ctx, board, queen_src, queen_dst){
     const height = Module._web_nb_row(board);
@@ -101,11 +114,11 @@ function drawBoard(canvas, ctx, board){
         ctx.fillStyle = "black";
         
 
-        if (cell_state == 1){ //Add black queen 
-            ctx.drawImage(queen_black, x, y, cellSizeX, cellSizeY);
-        }else if (cell_state == 2){ //Add white queen 
+        if (cell_state === 1){ //Add white queen 
             ctx.drawImage(queen_white, x, y, cellSizeX, cellSizeY);
-        }else if (cell_state == 3){ //Add arrow 
+        }else if (cell_state === 2){ //Add black queen 
+            ctx.drawImage(queen_black, x, y, cellSizeX, cellSizeY);
+        }else if (cell_state === 3){ //Add arrow 
             ctx.beginPath();
             let radius = Math.min(cellSizeX/4, cellSizeY/2);
             ctx.arc(x + cellSizeX/2, y + cellSizeY/2, radius, 0, 2 * Math.PI, false);
@@ -115,6 +128,11 @@ function drawBoard(canvas, ctx, board){
         
         ctx.strokeRect(x, y, cellSizeX, cellSizeY);
         }
+    }
+    if (demoInteracted === 0){
+        displayText(canvas, ctx, "Click to play !");
+    }else if (demoInteracted === 1){
+        displayText(canvas, ctx, "Last player to move wins !");
     }
 };
 
@@ -154,9 +172,9 @@ async function translate_from_to(board, canvas, ctx, idx_src, idx_dst, playerId,
             ctx.fill();
         }else{
             if (playerId == 0){
-                ctx.drawImage(queen_black, x_src + index*step_x, y_src + index*step_y, cellSizeX, cellSizeY);
-            }else{
                 ctx.drawImage(queen_white, x_src + index*step_x, y_src + index*step_y, cellSizeX, cellSizeY);
+            }else{
+                ctx.drawImage(queen_black, x_src + index*step_x, y_src + index*step_y, cellSizeX, cellSizeY);
             }
         }
         await sleep(10)
@@ -166,6 +184,18 @@ async function translate_from_to(board, canvas, ctx, idx_src, idx_dst, playerId,
 }
 
 async function handleClick(canvas, ctx, event, board){
+    if (demoInteracted === 0){
+        demoInteracted++;
+        drawBoard(canvas, ctx, board);
+        return;
+    }else if (demoInteracted === 1){
+        demoInteracted++;
+        drawBoard(canvas, ctx, board);
+        return;
+    }
+    if (!canPlay){
+        return;
+    }
     const height = Module._web_nb_row(board);
     const width = Module._web_nb_col(board);
 
@@ -207,6 +237,7 @@ async function handleClick(canvas, ctx, event, board){
             clickCount = 2;
             // console.log("You must choose a valid arrow destination");
         }else{
+            canPlay = false;
             playMove(board, {queen_src : selectedPiece, queen_dst : destinationPiece, arrow_dst : arrowDestination});
             await translate_from_to(board, canvas, ctx, selectedPiece, destinationPiece, 0, false);
             await translate_from_to(board, canvas, ctx, destinationPiece, arrowDestination, 0, true);
@@ -215,6 +246,7 @@ async function handleClick(canvas, ctx, event, board){
             await translate_from_to(board, canvas, ctx, Module._web_previous_move_queen_src(board), Module._web_previous_move_queen_dst(board), 1, false);
             await translate_from_to(board, canvas, ctx, Module._web_previous_move_queen_dst(board), Module._web_previous_move_arrow_dst(board), 1, true);
             drawBoard(canvas, ctx, board);
+            canPlay = true;
         }
 
     }
@@ -228,7 +260,7 @@ function handleRightClick(canvas, ctx, event, board){
 }
 
 function launchNewGame(width, shape, canvas, ctx){
-    if (!(shape == "s" || shape == "d" || shape == "8" || shape == "t" )){
+    if (!(shape === "s" || shape === "d" || shape === "8" || shape === "t" )){
         console.log("Tried to launch a game with a incorrect shape : ", shape, ". Defaulting to square.");
         shape = "s";
     }
