@@ -10,13 +10,23 @@ queen_white.src = "../ressources/images/amazons_queen_white.png"
 const queen_black = new Image()
 queen_black.src = "../ressources/images/amazons_queen_black.png"
 
-const startAmazonDemo = async () => {
+const startAmazonDemo = () => {
     const canvas = document.getElementById('gameCanvas');
     const ctx = canvas.getContext('2d');
     const container = canvas.parentNode;
     canvas.width = container.clientWidth;
     canvas.height = container.clientHeight;
-    Module.onRuntimeInitialized = () => launchNewGame(8, "s", canvas, ctx);
+    // Other browser (Chrome/Edge) seems to never call Module.onRuntimeInitialized and seems to work even without it
+    // Firefox will fail without the onRuntimeInitialized. This should be the correct usage, need to investigate Chrome Edge
+    if (navigator.userAgent.indexOf("Firefox") != -1){ 
+        Module.onRuntimeInitialized = () => {
+            launchNewGame(8, "s", canvas, ctx);
+            window.addEventListener("resize", updateCanvasDimensions); // Updating the dimension means drawing, which means that the game must be started
+        }
+    }else{
+        launchNewGame(8, "s", canvas, ctx);
+        window.addEventListener("resize", updateCanvasDimensions); // Updating the dimension means drawing, which means that the game must be started
+    }
 }
 
 const playMove = (board, move) => {
@@ -247,4 +257,4 @@ function updateCanvasDimensions(){
 
 
 
-export {startAmazonDemo, updateCanvasDimensions};
+export { startAmazonDemo };

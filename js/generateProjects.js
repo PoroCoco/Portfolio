@@ -1,4 +1,4 @@
-import { startAmazonDemo, updateCanvasDimensions } from './amazonDemo.js';
+import { startAmazonDemo } from './amazonDemo.js';
 
 function readJSON(path, callback) {
     fetch(path)
@@ -7,9 +7,7 @@ function readJSON(path, callback) {
     })
     .then((data) => {
         callback(data);
-        startAmazonDemo().then(
-            () => {window.addEventListener("resize", updateCanvasDimensions);} // Updating the dimension means drawing, which means that the game must be started
-        ); 
+        startAmazonDemo();
     });
 }
 
