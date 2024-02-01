@@ -2,11 +2,11 @@
     margin-left: auto;
     margin-right: auto;
     display: grid;
-    background-color: none; /* White background */
+    background-color: none; 
     width: 55%; 
     min-width: 1000px;
     padding-bottom: 5vh;
-    grid-template-columns: 1fr 1fr; /* Create two equal columns */
+    grid-template-columns: 1fr 1fr; 
     grid-template-rows: max-content max-content max-content;
     transition: box-shadow 0.3s ease;
 }
@@ -36,14 +36,15 @@
 
 .project-tag {
     padding: 10px;
-    grid-column: span 2;
     box-sizing: border-box;
     width:100%;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .single-tag {
     color:#010101;
-    background-color: #caab78; /* Orange */
+    background-color: #caab78; 
     border-radius: 25px;
     padding: 2px;
     padding-left: 8px;
@@ -53,14 +54,33 @@
     margin-left: 5px;
 }
 
+.project-icons {
+    text-align: right;
+    padding: 10px; 
+    width:100%;
+    box-sizing: border-box;
+}
+
+/* It's a link but don't show any colors */
+.project-icons a {
+    color: transparent;
+}
+
+.project-icon {
+    width: 10%;
+    height: 100%;
+    margin-left: 15px;
+}
+
+
 .project-media {
     position: relative;
-    background-color: #f2f2f2; /* Light gray background */
+    background-color: #f2f2f2; 
     box-sizing: border-box;
     width:100%;
     overflow: hidden;
     min-height: 300px;
-    max-height: 33vh;
+    max-height: 100%;
     border-radius: 25px;
     transition: box-shadow 0.3s ease;
 }
@@ -103,10 +123,9 @@
 .project-description {
     margin-top: auto;
     margin-bottom: auto;
-    max-height: 30vh;
+    max-height: 90%;
     height: fit-content;
-    min-height: 10vh;
-    background-color: #3C3836;; /* Light gray background */
+    background-color: #3C3836;
     box-sizing: border-box;
     border-radius: 25px;
     padding: 30px;

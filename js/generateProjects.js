@@ -18,10 +18,16 @@ function createProjects(jsonData){
     let currentProjectIndex = 0;
     function projectGeneration(projectJSON){
         const portfolioItem = document.createElement("div");
+
         let projectTags = "";
         for(const tag of projectJSON["tags"]){
             projectTags += `<div class="single-tag">${tag}</div>\n`;
         }
+        let projectIcons = "";
+        for(const icon of projectJSON["icons"]){
+            projectIcons += `<a href="${icon["link"]}" target="_blank"> <img class="project-icon" src="/ressources/${icon["path"]}" alt="${icon["alt"]}"> </a>\n`;
+        }
+
         let projectMedias = "";
         let mediaCount = 0;
         if (projectJSON["title"] == "Game of the Amazons"){
@@ -43,11 +49,14 @@ function createProjects(jsonData){
             }
             mediaCount++;
         }
+
         portfolioItem.className = "projects-item";
         let titleDiv = `<div class="project-title">${projectJSON["title"]}</div>`;
         let dateDiv = `<div class="project-date">${projectJSON["date"]} - ${projectJSON["type"]}</div>`;
         let tagsDiv = `<div class="project-tag">`+ projectTags +`</div>`;
-        
+        let iconsDiv = `<div class="project-icons">`
+                            + projectIcons +
+                        `</div>`;
         let mediaDiv = `<div class="project-media">
                             <div class="images" data-image-count="`+ mediaCount +`"> 
                                 `+ projectMedias +`
@@ -58,7 +67,7 @@ function createProjects(jsonData){
         }
         mediaDiv += `</div>`;
         let descriptionDiv = `<div class="project-description">${projectJSON["description"]}</div>`;
-        portfolioItem.innerHTML = titleDiv + dateDiv + tagsDiv;
+        portfolioItem.innerHTML = titleDiv + dateDiv + tagsDiv + iconsDiv;
         if (currentProjectIndex%2 == 0){
             portfolioItem.innerHTML += mediaDiv + descriptionDiv;
         }else{
