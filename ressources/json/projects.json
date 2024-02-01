@@ -19,7 +19,7 @@
         "title" : "Physics Engine",
         "date" : "2023",
         "type" : "Personal Project",
-        "description" : "Physics engine using verlet integration to compute the positions. The simulation have a spatial hashing structure applied to the objects to be able to quickly detect collisions to solve them. It uses OpenGL to render the simulation.",
+        "description" : "Physics engine using verlet integration to compute the positions. The simulation have a spatial hashing structure applied to the objects to be able to quickly detect collisions to solve them with multiple threads along with SIMD instructions from the Intel intrinsics. It uses OpenGL to render the simulation.",
         "tags" : ["C", "OpenGL", "ImGui", "Physics"],
         "icons" : 
         [
