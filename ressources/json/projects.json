@@ -3,9 +3,12 @@
         "title" : "Vulkan Engine",
         "date" : "2024",
         "type" : "Personal Project",
-        "description" : "A simple vulkan based renderer. It can load models and have a camera module to navigate in the scene. It's a work in progress project.",
+        "description" : "A simple vulkan based renderer. It can load models and have a camera module to navigate in the scene. It's a work in progress project and still is very barebone.",
         "tags" : ["C++", "Vulkan", "Graphics", "GPU"],
-        "repo" : "",
+        "icons" : 
+        [
+            {"alt" : "Github Repo", "link" : "https://github.com/PoroCoco/Vulkan-Engine", "path" : "/images/icon_github.png"}
+        ],
         "media" :
         [
             {"alt-text" : "Vulkan wireframe truck model spinning",  "path" : "/videos/vulkan_wireframe_truck.mp4"},
@@ -18,7 +21,10 @@
         "type" : "Personal Project",
         "description" : "Physics engine using verlet integration to compute the positions. The simulation have a spatial hashing structure applied to the objects to be able to quickly detect collisions to solve them. It uses OpenGL to render the simulation.",
         "tags" : ["C", "OpenGL", "ImGui", "Physics"],
-        "repo" : "https://github.com/PoroCoco/Physics-Engine-Verlet",
+        "icons" : 
+        [
+            {"alt" : "Github Repo", "link" : "https://github.com/PoroCoco/Physics-Engine-Verlet", "path" : "/images/icon_github.png"}
+        ],
         "media" :
         [
             {"alt-text" : "simulation interaction gif",  "path" : "/videos/physics_rope.webm"},
@@ -29,12 +35,34 @@
         "title" : "Game of the Amazons",
         "date" : "2023",
         "type" : "School Project",
-        "description" : "Generic implementation of the <a href=\"https://en.wikipedia.org/wiki/Game_of_the_Amazons\" target=\"_blank\">Game of the Amazons</a>, a two player board game, with an AI opponent. This project was developed in team of 4 students. I led my team's software architecture and optimisations which, in addition to our advanced heuristics, made us win the competition against 28 other teams' AIs. KCacheGrind and Gprof were used for the needed optimisations as winning an Amazons game is a PSPACE-complete problem. The board is represented as a sparse matrix using GSL. Full report avaible: <a href=\"/ressources/pdf/report_amazons_fr.pdf\" target=\"_blank\">French</a>.<br>I made my own web port using WebAssembly.",
+        "description" : "Generic implementation of the <a href=\"https://en.wikipedia.org/wiki/Game_of_the_Amazons\" target=\"_blank\">Game of the Amazons</a>, a two player board game, with an AI opponent. This project was developed in team of 4 students. I led my team's software architecture and optimisations which, in addition to our advanced heuristics, made us win the competition against 28 other teams' AIs. KCacheGrind and Gprof were used for the needed optimisations as winning an Amazons game is a PSPACE-complete problem. The board is represented as a sparse matrix using <abbr title=\"GNU Scientific Library\">GSL</abbr>.<br>I made my own web port using WebAssembly.",
         "tags" : ["C", "<abbr title=\"GNU Scientific Library\">GSL</abbr>", "WebAssembly", "AI"],
-        "repo" : "https://github.com/PoroCoco/Amazons-Game",
+        "icons" : 
+        [
+            {"alt" : "Report", "link" : "ressources/pdf/report_amazons_fr.pdf", "path" : "/images/icon_pdf.png"},
+            {"alt" : "Github Repo", "link" : "https://github.com/PoroCoco/Amazons-Game", "path" : "/images/icon_github.png"}
+        ],
         "media" :
         [
 
+        ]
+    },
+    {
+        "title" : "Distributed I/O Scheduler for Parallel File Systems in Supercomputers",
+        "date" : "2023",
+        "type" : "Professional Project",
+        "description" : "This program was written during my internship at <abbr title=\"French Institute for Research in Computer Science\">INRIA</abbr>. It allows the user to describe an I/O scenario in a HPC context, multiple applications each running multiple processes, and runs it while logging the metrics. This was done in order to test a distributed I/O scheduler that I wrote to improve the <a href=\"https://inria.hal.science/hal-03648225/document\" target=\"_blank\">IO-Sets</a> management method implementation that was limited to a single process. Futhermore, my implementation had the benefit of handling low-bandwidth applications whereas the original one had a linear scaling with these.",
+        "tags" : ["C", "I/O", "MPI", "Data Visualization", "HPC"],
+        "icons" : 
+        [
+            {"alt" : "Presentation Slides", "link" : "ressources/pdf/io-sets_presentation.pdf", "path" : "/images/icon_presentation.png"},
+            {"alt" : "Report", "link" : "https://gitlab.inria.fr/lpeyrond/io-sets-distributed/-/blob/main/README.md?ref_type=heads#report", "path" : "/images/icon_pdf.png"},
+            {"alt" : "Gitlab Repo", "link" : "https://gitlab.inria.fr/lpeyrond/io-sets-distributed", "path" : "/images/icon_gitlab.png"}
+        ],
+        "media" :
+        [
+            {"alt-text" : "Diagram of the program",  "path" : "/images/io-sets_diagram.png"},
+            {"alt-text" : "Graph showing the Round Trip Time of I/O requests on 3 sets",  "path" : "/images/io-sets_exclusive.png"}
         ]
     },
     {
@@ -43,24 +71,13 @@
         "type" : "Personnal Project",
         "description" : "MyAeNetwork is a program that allow modded Minecraft users to access and control their Applied Energistics storage from the web. It consists of a OpenComputer LUA program that act as a client that sends the storage information through a TCP socket with a custom protocol to a TCP server that handles every clients. A web interface with user logging is build on top and let players connect to their private storage to view its state and send crafting requests.",
         "tags" : ["Lua", "TCP Socket", "Python", "Flask", "SQL"],
-        "repo" : "https://github.com/PoroCoco/myaenetwork",
+        "icons" : 
+        [
+            {"alt" : "Github Repo", "link" : "https://github.com/PoroCoco/myaenetwork", "path" : "/images/icon_github.png"}
+        ],
         "media" :
         [
             {"alt-text" : "Demo of the program",  "path" : "/videos/myaenetwork.webm"}
         ]
-    },
-    {
-        "title" : "Distributed I/O Scheduler for Parallel File Systems in Supercomputers",
-        "date" : "2023",
-        "type" : "Professional Project",
-        "description" : "",
-        "tags" : ["C", "I/O", "MPI", "Data Visualization", "HPC"],
-        "repo" : "https://gitlab.inria.fr/lpeyrond/io-sets-distributed",
-        "media" :
-        [
-            {"alt-text" : "Diagram of the program",  "path" : "/images/io-sets_diagram.png"},
-            {"alt-text" : "Graph showing the Round Trip Time of I/O requests on 3 sets",  "path" : "/images/io-sets_exclusive.png"}
-        ]
     }
-
 ]
