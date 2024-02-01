@@ -23,8 +23,8 @@
     </header>
 
     <section class="about" id="about">
-        Hey, I'm Louis Peyrondet a <span id ="age" style="font-family: monospace;"></span> year-old software engineering student currently at Enseirb-Matmeca. I'm mainly interested in low level development, GPUs, optimization, system programming, parallel and distributed computing. I'm also open to exploring additional domains and expanding my skill set. <br>
-        You can download my <a style="font-weight: bold;" href="/ressources/pdf/resume_en.pdf" target="_blank">Resume</a>. <br>
+        Hey, I'm Louis Peyrondet a <span id="age" class="years"></span> year-old software engineering student currently at Enseirb-Matmeca. I'm mainly interested in low level development, GPUs, optimization, system programming, parallel and distributed computing. I'm also open to exploring additional domains and expanding my skill set.<br>
+        You can download my <b><a href="/ressources/pdf/resume_en.pdf" target="_blank">Resume</a></b>. <br>
         Here are some of my projects and experience !
     </section>
 
@@ -44,9 +44,11 @@
         <div class="publications-container">
             <div class="conference-paper">
                 <u>Conference Papers :</u>
-                <li class="paper">
-                    <p >F.Boito, A.T.A.Gomes, L.Peyrondet, L.Teylo. <span style="font-weight: bold;">I/O performance of multiscale finite element simulations on HPC environments</span>, 2022 International Symposium on Computer Architecture and High Performance Computing Workshops (SBAC-PADW), Bordeaux, France, 2022. <a href="/ressources/pdf/io_finite_element_hpc.pdf" target="_blank">PDF LINK</a></p>
-                </li>
+                <ul>
+                    <li class="paper">
+                        <p>F.Boito, A.T.A.Gomes, L.Peyrondet, L.Teylo. <b>I/O performance of multiscale finite element simulations on HPC environments</b>, 2022 International Symposium on Computer Architecture and High Performance Computing Workshops (SBAC-PADW), Bordeaux, France, 2022. <a href="/ressources/pdf/io_finite_element_hpc.pdf" target="_blank">PDF LINK</a></p>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
@@ -79,7 +81,7 @@
                 ageSpan.textContent = formattedAge;
             }, 50);
         }
-        window.onload = updateAge;
+        window.addEventListener("load", updateAge);
     </script>
 
 
