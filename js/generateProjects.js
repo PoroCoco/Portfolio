@@ -62,8 +62,8 @@ function createProjects(jsonData){
                                 `+ projectMedias +`
                             </div>`;
         if (mediaCount > 1){
-            mediaDiv += `<button class="carousel-button prev" name="button-prev" onclick="updateSlide(event, -1);">&#10094;</button>
-                        <button class="carousel-button next" name="button-next" onclick="updateSlide(event, +1);">&#10095;</button>`;
+            mediaDiv += `<button type='button' class="carousel-button prev" name="button-prev" onclick="updateSlide(event, -1);">&#10094;</button>
+                         <button type='button' class="carousel-button next" name="button-next" onclick="updateSlide(event, +1);">&#10095;</button>`;
         }
         mediaDiv += `</div>`;
         let descriptionDiv = `<div class="project-description">${projectJSON["description"]}</div>`;
