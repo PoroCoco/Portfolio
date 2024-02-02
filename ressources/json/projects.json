@@ -57,7 +57,7 @@
         [
             {"alt" : "Presentation Slides", "link" : "ressources/pdf/io-sets_presentation.pdf", "path" : "/images/icon_presentation.png"},
             {"alt" : "Report", "link" : "https://gitlab.inria.fr/lpeyrond/io-sets-distributed/-/blob/main/README.md?ref_type=heads#report", "path" : "/images/icon_pdf.png"},
-            {"alt" : "Gitlab Repo", "link" : "https://gitlab.inria.fr/lpeyrond/io-sets-distributed", "path" : "/images/icon_gitlab.png"}
+            {"alt" : "Gitlab Repo", "link" : "https://gitlab.inria.fr/lpeyrond/io-sets-distributed", "path" : "/images/icon_github.png"}
         ],
         "media" :
         [
