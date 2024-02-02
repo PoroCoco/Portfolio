@@ -80,7 +80,6 @@
     width:100%;
     overflow: hidden;
     min-height: 300px;
-    max-height: 100%;
     border-radius: 25px;
     transition: box-shadow 0.3s ease;
 }
@@ -96,7 +95,7 @@
     display: flex;
     transition: transform 0.5s ease;
     width: 100%;
-    height: 33vh;
+    height: 20rem;
     min-height: 100%;
 }
 
@@ -123,8 +122,8 @@
 .project-description {
     margin-top: auto;
     margin-bottom: auto;
-    max-height: 90%;
     height: fit-content;
+    max-height: 17rem;
     background-color: #3C3836;
     box-sizing: border-box;
     border-radius: 25px;

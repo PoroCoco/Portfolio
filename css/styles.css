@@ -53,8 +53,9 @@ html {
 
 .section-header {
     text-align: center;
-    font-size: xx-large;
+    font-size: 250%;
     padding: 2%;
+    text-decoration: underline;
 }
 
 .header-jump {
@@ -86,6 +87,13 @@ a:visited {
     width: 55%; 
     margin-right: auto;
     margin-left: 20%;
+    font-size: 26px;
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
+
+.project-end {
+    text-align: center;
     font-size: 26px;
     padding-bottom: 3%;
     padding-top: 3%;
