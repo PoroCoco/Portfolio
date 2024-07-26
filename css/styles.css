@@ -108,6 +108,24 @@ a:visited {
     padding-bottom: 5%;
 }
 
+::-webkit-scrollbar {
+    width: 4px;
+}
+  
+::-webkit-scrollbar-track {
+    background: transparent;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #BDBDBD;
+    border-radius: 25px;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #6E6E6E;
+}
 @media screen and (max-width: 1050px) {
     .about{
         margin-left: 0px;
