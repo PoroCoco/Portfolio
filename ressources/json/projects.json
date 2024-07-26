@@ -1,9 +1,27 @@
 [
     {
+        "title" : "Computer Vision Projects :<br>3D Projection | Photometric Stereo | Image Stitcher ",
+        "date" : "2024",
+        "type" : "School Project",
+        "description" : "Compilation of various Computer Vision projects, including Photometric Stereo using Lambertian Reflectance Maps, automatic Image Stitching with geometric transforms and feature matching, and real-time 3D object projection on checkerboard patterns. Implemented key OpenCV functions using NumPy.",
+        "tags" : ["Python", "OpenCV", "Numpy", "Computer Vision"],
+        "icons" : 
+        [
+            {"alt" : "Report", "link" : "ressources/pdf/photometric_stereo.pdf", "path" : "/images/icon_pdf.png"}
+        ],
+        "media" :
+        [
+            {"alt-text" : "Youtube video showcase for Photometric stereo",  "path" : "/youtube/https://www.youtube.com/watch?v=4jEdv5bEzTo"},
+            {"alt-text" : "Stiching image of a palace",  "path" : "/images/cv-palace.png"},
+            {"alt-text" : "Stiching image a balcony",  "path" : "/images/cv-balcony.png"},
+            {"alt-text" : "3D Projection of a cube",  "path" : "/images/cv-cube_projection.png"}
+        ]
+    },
+    {
         "title" : "Voxel Game Engine",
         "date" : "2024",
         "type" : "Personal Project",
-        "description" : "A Minecraft clone made from scratch in C. It renders in real time at over 120 fps, handling more than 4 Billion voxels. The project features custom data structures, including hashtables and producer-consumer queues. Chunk generation is optimized and multi-threaded, utilizing greedy meshing and bit-packed data for efficient GPU communication. OpenGL operates on a separate rendering thread, ensuring smooth performance. The project also supports cross-platform compilation.",
+        "description" : "A Minecraft clone made from scratch in C and OpenGL. It renders in real time at over 120 fps, handling more than 4 Billion voxels. The project features custom data structures, including hashtables and producer-consumer queues. Chunk generation is optimized and multi-threaded, utilizing greedy meshing and bit-packed data for efficient GPU communication. OpenGL operates on a separate rendering thread, ensuring smooth performance. The project also supports cross-platform compilation.",
         "tags" : ["C", "OpenGL", "Parallel", "Graphics"],
         "icons" : 
         [
