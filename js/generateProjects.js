@@ -41,6 +41,12 @@ function createProjects(jsonData){
                 projectMedias += `  <video class="media-video" muted="true" loop="true" autoplay="true">
                                         <source src="ressources/${media["path"]}" type="video/${videoExtension}"/>
                                     </video>`
+            }else if (mediaType == "youtube"){
+                let url = media["path"]
+                url = url.replace("/youtube/", "")
+                url = url.replace("watch?v=", "embed/")
+                url += "?rel=0" // Only suggest video from the channel/hide
+                projectMedias += `<iframe src="${url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
             }else{
                 console.error("Invalid media type for project generation of \"", projectJSON["title"], "\", media type was : ", mediaType);
                 continue;
