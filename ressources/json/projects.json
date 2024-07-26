@@ -1,5 +1,19 @@
 [
     {
+        "title" : "Operating System for RISC-V Processors",
+        "date" : "2024",
+        "type" : "Personal Project",
+        "description" : "During my semester abroad at Keio University, I joined the Computer Science club, Keio Computer Society, where I taught OS concepts to three undergraduates through the development of an operating system built from the ground up in C as a team. Features process creation and scheduling, virtual memory with pages, system calls and trap handling, basic I/O operations and shell program running in user space.",
+        "tags" : ["C", "OS", "RISC-V"],
+        "icons" : 
+        [
+        ],
+        "media" :
+        [
+            {"alt-text" : "Terminal about of the QEMU launch with user space shell",  "path" : "/images/os_terminal.png"}
+        ]
+    },
+    {
         "title" : "Computer Vision Projects :<br>3D Projection | Photometric Stereo | Image Stitcher ",
         "date" : "2024",
         "type" : "School Project",
