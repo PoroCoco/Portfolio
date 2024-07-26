@@ -1,6 +1,22 @@
 [
     {
-        "title" : "Vulkan Engine",
+        "title" : "Voxel Game Engine",
+        "date" : "2024",
+        "type" : "Personal Project",
+        "description" : "A Minecraft clone made from scratch in C. It renders in real time at over 120 fps, handling more than 4 Billion voxels. The project features custom data structures, including hashtables and producer-consumer queues. Chunk generation is optimized and multi-threaded, utilizing greedy meshing and bit-packed data for efficient GPU communication. OpenGL operates on a separate rendering thread, ensuring smooth performance. The project also supports cross-platform compilation.",
+        "tags" : ["C", "OpenGL", "Parallel", "Graphics"],
+        "icons" : 
+        [
+            {"alt" : "Github Repo", "link" : "https://github.com/PoroCoco/C-Minecraft", "path" : "/images/icon_github.png"}
+        ],
+        "media" :
+        [
+            {"alt-text" : "Youtube video for chunk generation demo",  "path" : "/youtube/https://www.youtube.com/watch?v=XrN-4W7g4n8"},
+            {"alt-text" : "Screenshot from a lake view with performance metrics",  "path" : "/images/voxel_main.png"}
+        ]
+    },
+    {
+        "title" : "Vulkan Renderer",
         "date" : "2024",
         "type" : "Personal Project",
         "description" : "A simple vulkan based renderer. It can load models and have a camera module to navigate in the scene. It's a work in progress project and still is very barebone.",
